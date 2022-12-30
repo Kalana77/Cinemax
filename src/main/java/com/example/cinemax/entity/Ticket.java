@@ -39,7 +39,16 @@ public class Ticket {
     private boolean activeStatus;
 
 
-
-    public Ticket(long bookingId, long movieId, long theaterId, int seatNo, int price, int ticketQyt, Time showTime, Date showDate, boolean b) {
+    public Ticket(long ticketId, long bookingId, long movieId, long theaterId, int seatNo, int price, Time showTime, Date showDate, boolean activeStatus) {
+        this.ticketId = ticketId;
+        this.bookingId = bookingId;
+        this.movieId = movieId;
+        this.theaterId = theaterId;
+        this.seatNo = seatNo;
+        this.price = price;
+        this.ticketQyt = ticketQyt;
+        this.showTime = showTime;
+        this.showDate = showDate;
+        this.activeStatus = activeStatus;
     }
 }

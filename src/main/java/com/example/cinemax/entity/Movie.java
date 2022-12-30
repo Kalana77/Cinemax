@@ -46,11 +46,17 @@ public class Movie {
     private boolean activeStatus;
 
 
-    public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, Time time, Date date, boolean b) {
-
-    }
-
-    public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, int duration, Time time, Date date, boolean b) {
-
+    public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, int duration, Time time, Date date, boolean activeStatus) {
+        this.filmId = filmId;
+        this.filmName = filmName;
+        this.category = category;
+        this.filmStatus = filmStatus;
+        this.description = description;
+        this.posterLink = posterLink;
+        this.trailerLink = trailerLink;
+        this.duration = duration;
+        this.time = time;
+        this.date = date;
+        this.activeStatus = activeStatus;
     }
 }

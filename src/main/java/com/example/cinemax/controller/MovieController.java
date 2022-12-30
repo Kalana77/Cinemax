@@ -62,7 +62,7 @@ public class MovieController {
     @DeleteMapping(
             path = {"/delete-movie/{id}"}
     )
-    public String deleteMovie(@PathVariable(value = "id")int id) {
+    public String deleteMovie(@PathVariable(value = "id")int id) throws NotFoundException {
         boolean deleteCustomer = movieService.deleteCustomer(id);
         return "deleted";
     }

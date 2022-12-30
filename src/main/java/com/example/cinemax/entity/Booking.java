@@ -43,6 +43,5 @@ public class Booking {
         this.activeStatus = activeStatus;
     }
 
-    public Booking(long customerId, long paymentId, long ticketId, Time bookingTime, Date bookingData, boolean b) {
-    }
+
 }
