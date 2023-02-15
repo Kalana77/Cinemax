@@ -44,4 +44,12 @@ public class Booking {
     }
 
 
+    public Booking(long customerId, long paymentId, long ticketId, Time bookingTime, Date bookingData, boolean b) {
+        this.customerId = customerId;
+        this.paymentId = paymentId;
+        this.ticketId = ticketId;
+        this.bookingTime = bookingTime;
+        this.bookingData = bookingData;
+        this.activeStatus = b;
+    }
 }

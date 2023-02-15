@@ -12,7 +12,7 @@ import java.sql.Time;
 @Setter
 @Getter
 @ToString
-@Table(name = "customer")
+
 public class Ticket {
 
     @Id
