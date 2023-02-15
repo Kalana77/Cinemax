@@ -31,16 +31,6 @@ public class TheaterServiceIMPL implements TheaterService {
         }
     }
 
-
-
-//    public boolean deleteCustomer(int id) throws NotFoundException {
-//        if (movieRepo.existsById(id)){
-//            movieRepo.deleteById(id);
-//        }else {
-//            throw new NotFoundException("not found movie");
-//        }
-//        return false;
-//    }
     @Override
     public boolean deleteTheater(int id) throws NotFoundException {
         if (theaterRepo.existsById(id)){
