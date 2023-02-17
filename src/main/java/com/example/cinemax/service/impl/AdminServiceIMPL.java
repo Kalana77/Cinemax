@@ -5,7 +5,9 @@ import com.example.cinemax.entity.Admin;
 import com.example.cinemax.repository.AdminRepo;
 import com.example.cinemax.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdminServiceIMPL implements AdminService {
 
     @Autowired
@@ -20,6 +22,5 @@ public class AdminServiceIMPL implements AdminService {
         );
         adminRepo.save(admin);
         return Integer.parseInt(admin.getAdmin_id() + "saved");
-
     }
 }

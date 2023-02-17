@@ -6,7 +6,9 @@ import com.example.cinemax.repository.SeatRepo;
 import com.example.cinemax.service.SeatService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SeatServiceIMPL implements SeatService {
 
     @Autowired
