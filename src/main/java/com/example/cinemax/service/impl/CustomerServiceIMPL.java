@@ -31,7 +31,7 @@ public class CustomerServiceIMPL implements CustomerService {
         );
         if (userRepo.findAllByEmail(customer.getEmail()).isEmpty()){
             userRepo.save(customer);
-            return Integer.parseInt(customer.getCustomerId() + "saved");
+            return (int) customer.getCustomerId();
         }else {
             System.out.println("customer email already exist");
             return Integer.parseInt("customer already exist");

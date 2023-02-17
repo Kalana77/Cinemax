@@ -34,7 +34,7 @@ public class Customer {
 
 
     public Customer(String customerName, String email, String password, int mobileNumber, boolean activeStatus) {
-        this.customerId = customerId;
+//        this.customerId = customerId;
         this.customerName = customerName;
         this.email = email;
         this.password = password;

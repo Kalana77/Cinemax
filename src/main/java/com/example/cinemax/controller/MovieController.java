@@ -34,7 +34,7 @@ public class MovieController {
     }
 
     @GetMapping(
-            path = "get-by-id-now",
+            path = "get-by-id-up",
             params = "id"
     )
     public UpComingCardResponseDTO getUpCard(@RequestParam(value = "id")int id) throws NotFoundException {
