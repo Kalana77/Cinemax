@@ -19,7 +19,7 @@ public class BookingServiceIMPL implements BookingService {
     private ModelMapper modelMapper;
 
     @Override
-    public int addBooking(AddBookingRequestDTO addBookingRequestDTO) {
+    public String addBooking(AddBookingRequestDTO addBookingRequestDTO) {
         Booking booking = new Booking(
                 addBookingRequestDTO.getCustomerId(),
                 addBookingRequestDTO.getPaymentId(),
@@ -30,10 +30,10 @@ public class BookingServiceIMPL implements BookingService {
         );
         if (bookingRepo.findAllByticketId(booking.getTicketId()).isEmpty()) {
             bookingRepo.save(booking);
-            return Integer.parseInt(booking.getCustomerId() + "saved");
+            return booking.getBookingId() + "saved";
         }else {
             System.out.println("Ticket already exist");
-            return Integer.parseInt("Booking already exist");
+            return "Booking already exist";
         }
 
 

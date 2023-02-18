@@ -2,6 +2,7 @@ package com.example.cinemax.controller;
 
 
 import com.example.cinemax.dto.ThearterDTO;
+import com.example.cinemax.dto.requestDTO.AddTheaterRequestDTO;
 import com.example.cinemax.service.TheaterService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class ThearterController {
     public TheaterService theaterService;
 
     @PostMapping("/addTheater")
-    public int addTheater(@RequestBody ThearterDTO thearterDTO){
-        int id = theaterService.addTheater(thearterDTO);
+    public String addTheater(@RequestBody AddTheaterRequestDTO addTheaterRequestDTO){
+        String id = theaterService.addTheater(addTheaterRequestDTO);
         return id;
     }
 

@@ -18,7 +18,7 @@ public class TicketServiceIMPL implements TicketService {
     public TicketRepo ticketRepo;
 
     @Override
-    public int addTicket(AddTicketRequestDTO addTicketRequestDTO) {
+    public String addTicket(AddTicketRequestDTO addTicketRequestDTO) {
         Ticket ticket = new Ticket(
                 addTicketRequestDTO.getBookingId(),
                 addTicketRequestDTO.getMovieId(),
@@ -32,10 +32,10 @@ public class TicketServiceIMPL implements TicketService {
         );
         if(ticketRepo.findBybookingId(ticket.getBookingId()).isEmpty()){
             ticketRepo.save(ticket);
-            return Integer.parseInt(ticket.getTicketId() + "saved");
+            return ticket.getTicketId() + "saved";
         }else {
             System.out.println("booking already exist");
-            return Integer.parseInt("booking already exist");
+            return "booking already exist";
         }
 
       //  return 0;

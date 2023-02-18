@@ -6,7 +6,7 @@ import javassist.NotFoundException;
 public interface SeatService {
 
 
-    int addSeat(SeatDTO seatDTO);
+    String addSeat(SeatDTO seatDTO);
 
     boolean deleteSeat(int id) throws NotFoundException;
 }

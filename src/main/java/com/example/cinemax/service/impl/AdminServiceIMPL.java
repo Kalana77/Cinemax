@@ -14,13 +14,13 @@ public class AdminServiceIMPL implements AdminService {
     private AdminRepo adminRepo;
 
     @Override
-    public int addAdmin(AdminDTO adminDTO) {
+    public String addAdmin(AdminDTO adminDTO) {
 
         Admin admin = new Admin(
                 adminDTO.getAdmin_name(),
                 adminDTO.getAdmin_mail()
         );
         adminRepo.save(admin);
-        return Integer.parseInt(admin.getAdmin_id() + "saved");
+        return admin.getAdmin_id() + "saved";
     }
 }

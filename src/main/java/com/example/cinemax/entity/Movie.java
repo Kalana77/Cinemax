@@ -47,7 +47,7 @@ public class Movie {
 
 
     public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, int duration, Time time, Date date, boolean activeStatus) {
-        this.filmId = filmId;
+//        this.filmId = filmId;
         this.filmName = filmName;
         this.category = category;
         this.filmStatus = filmStatus;

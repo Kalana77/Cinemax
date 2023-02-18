@@ -17,8 +17,8 @@ public class BookingController {
 
 
     @PostMapping("/addBooking")
-    public int addBooking(@RequestBody AddBookingRequestDTO addBookingRequestDTO){
-        int id = bookingService.addBooking(addBookingRequestDTO);
+    public String addBooking(@RequestBody AddBookingRequestDTO addBookingRequestDTO){
+        String id = bookingService.addBooking(addBookingRequestDTO);
         return id;
     }
 

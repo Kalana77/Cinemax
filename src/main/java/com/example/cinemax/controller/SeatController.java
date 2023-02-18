@@ -16,8 +16,8 @@ public class SeatController {
 
 
     @PostMapping("/addSeat")
-    public int addSeat(SeatDTO seatDTO){
-        int seatId = seatService.addSeat(seatDTO);
+    public String addSeat(SeatDTO seatDTO){
+        String seatId = seatService.addSeat(seatDTO);
         return seatId;
     }
 

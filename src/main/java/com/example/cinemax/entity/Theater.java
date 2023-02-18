@@ -25,16 +25,14 @@ public class Theater {
 
     String location;
 
-    public Theater(long theater_Id, String theater_name, long seat_Id, String location) {
-        this.theater_Id = theater_Id;
-        this.theater_name = theater_name;
-        this.seat_Id = seat_Id;
-        this.location = location;
+
+    public Theater(long seat_id, String theater_name, String location) {
+
     }
 
-    public Theater(long seat_id, String theater_name, long theater_id) {
+    public Theater(String theater_name, long seat_id, String location) {
+        this.seat_Id = seat_id;
         this.theater_name = theater_name;
-        this.seat_Id = seat_Id;
         this.location = location;
     }
 }

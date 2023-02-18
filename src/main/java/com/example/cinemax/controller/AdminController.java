@@ -16,8 +16,8 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    public int addAdmin(@RequestBody AdminDTO adminDTO){
-        int id = adminService.addAdmin(adminDTO);
+    public String addAdmin(@RequestBody AdminDTO adminDTO){
+        String id = adminService.addAdmin(adminDTO);
         return id;
 
     }

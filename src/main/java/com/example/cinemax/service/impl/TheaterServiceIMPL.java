@@ -1,6 +1,6 @@
 package com.example.cinemax.service.impl;
 
-import com.example.cinemax.dto.ThearterDTO;
+import com.example.cinemax.dto.requestDTO.AddTheaterRequestDTO;
 import com.example.cinemax.entity.Theater;
 import com.example.cinemax.repository.TheaterRepo;
 import com.example.cinemax.service.TheaterService;
@@ -15,19 +15,19 @@ public class TheaterServiceIMPL implements TheaterService {
     public TheaterRepo theaterRepo;
 
     @Override
-    public int addTheater(ThearterDTO thearterDTO) {
+    public String addTheater(AddTheaterRequestDTO addTheaterRequestDTO) {
 
         Theater theater = new Theater(
-                thearterDTO.getSeat_Id(),
-                thearterDTO.getTheater_name(),
-                thearterDTO.getTheater_Id()
+                addTheaterRequestDTO.getTheater_name(),
+                addTheaterRequestDTO.getSeat_Id(),
+                addTheaterRequestDTO.getLocation()
         );
         if (theaterRepo.existsById((int) theater.getTheater_Id())){
             theaterRepo.save(theater);
-            return Integer.parseInt(theater.getTheater_Id() + "Saved");
+            return theater.getTheater_Id() + "Saved";
         }else {
             System.out.println("Theater already exist");
-            return Integer.parseInt("booking already exist");
+            return "booking already exist";
         }
     }
 
@@ -40,4 +40,6 @@ public class TheaterServiceIMPL implements TheaterService {
         }
         return false;
     }
+
+
 }

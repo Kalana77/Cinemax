@@ -21,7 +21,7 @@ public class CustomerServiceIMPL implements CustomerService {
     private ModelMapper modelMapper;
 
     @Override
-    public int addCustomer(CustomerSaveRequestDTO customerSaveRequestDTO) {
+    public String addCustomer(CustomerSaveRequestDTO customerSaveRequestDTO) {
         Customer customer = new Customer(
                 customerSaveRequestDTO.getCustomerName(),
                 customerSaveRequestDTO.getEmail(),
@@ -31,10 +31,10 @@ public class CustomerServiceIMPL implements CustomerService {
         );
         if (userRepo.findAllByEmail(customer.getEmail()).isEmpty()){
             userRepo.save(customer);
-            return (int) customer.getCustomerId();
+            return customer.getCustomerId() + "saved";
         }else {
             System.out.println("customer email already exist");
-            return Integer.parseInt("customer already exist");
+            return "customer already exist";
         }
 
 

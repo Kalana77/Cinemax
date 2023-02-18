@@ -19,21 +19,16 @@ import javax.persistence.Id;
 public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long Seat_id;
+    long SeatId;
 
-    int Seat_no;
+    int SeatNo;
 
-    int Theater_id;
+    int TheateId;
 
-
-    public Seat(long seat_id, int seat_no, int theater_id) {
-        this.Seat_id = seat_id;
-        this.Seat_no = seat_no;
-        this.Theater_id = theater_id;
+    public Seat(int seatNo, int theaterId) {
+        this.SeatNo = seatNo;
+        this.TheateId = theaterId;
     }
 
-    public Seat(int seat_no, int theater_id) {
-        this.Seat_no = seat_no;
-        this.Theater_id = theater_id;
-    }
+
 }

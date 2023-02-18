@@ -15,8 +15,8 @@ public class TicketController {
     public TicketService ticketService;
 
     @PostMapping("/addTicket")
-    public int addTicket(@RequestBody AddTicketRequestDTO addTicketRequestDTO) {
-        int id = ticketService.addTicket(addTicketRequestDTO);
+    public String addTicket(@RequestBody AddTicketRequestDTO addTicketRequestDTO) {
+        String id = ticketService.addTicket(addTicketRequestDTO);
         return id;
 
     }

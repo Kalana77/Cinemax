@@ -2,7 +2,7 @@ package com.example.cinemax.dto;
 
 import lombok.*;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
@@ -15,4 +15,5 @@ public class ThearterDTO {
     long seat_Id;
 
     String location;
+
 }

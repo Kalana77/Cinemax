@@ -7,7 +7,7 @@ import javassist.NotFoundException;
 public interface CustomerService {
 
 
-    int addCustomer(CustomerSaveRequestDTO customerSaveRequestDTO);
+    String addCustomer(CustomerSaveRequestDTO customerSaveRequestDTO);
 
     UserBookingResponseDTO getUserForBooking(int id) throws NotFoundException;
 }
