@@ -21,14 +21,13 @@ public class Seat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long SeatId;
 
-    int SeatNo;
+    int seatNo;
 
-    int TheateId;
+    int theaterId;
+
 
     public Seat(int seatNo, int theaterId) {
-        this.SeatNo = seatNo;
-        this.TheateId = theaterId;
+        this.seatNo = seatNo;
+        this.theaterId = theaterId;
     }
-
-
 }

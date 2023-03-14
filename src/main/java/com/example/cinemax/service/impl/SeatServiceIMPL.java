@@ -21,13 +21,15 @@ public  class SeatServiceIMPL implements SeatService {
                 seatDTO.getSeatNo(),
                 seatDTO.getTheaterId()
         );
-        if (seatRepo.existsById(seatDTO.getSeatNo())) {
+        //(userRepo.findAllByEmail(customer.getEmail()).isEmpty()){
+
+//        if (seatRepo.findAllByseatNo(seatDTO.getSeatNo()).isEmpty()) { //false krnna
             seatRepo.save(seat);
             return seat.getSeatId() + "saved";
-        } else {
-            System.out.println("booking already exist");
-            return "Seat does not exist";
-        }
+//        } else {
+//            System.out.println("booking already exist");
+//            return "Seat does not exist";
+//        }
 
 
     }

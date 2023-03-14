@@ -26,7 +26,7 @@ public class MovieDTO {
 
     private String trailerLink;
 
-    private int duration;
+    private String duration;
 
     private Time time;
 

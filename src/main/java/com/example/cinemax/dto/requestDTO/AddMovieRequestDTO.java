@@ -19,7 +19,7 @@ public class AddMovieRequestDTO {
 
     private String trailerLink;
 
-    private int duration;
+    private String duration;
 
     private Time time;
 
@@ -31,7 +31,7 @@ public class AddMovieRequestDTO {
     public AddMovieRequestDTO() {
     }
 
-    public AddMovieRequestDTO(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, int duration, Time time, Date date) {
+    public AddMovieRequestDTO(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, String duration, Time time, Date date) {
         this.filmName = filmName;
         this.category = category;
         this.filmStatus = filmStatus;
@@ -91,11 +91,11 @@ public class AddMovieRequestDTO {
         this.trailerLink = trailerLink;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

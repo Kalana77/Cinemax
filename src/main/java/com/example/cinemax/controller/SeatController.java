@@ -16,7 +16,7 @@ public class SeatController {
 
 
     @PostMapping("/addSeat")
-    public String addSeat(SeatDTO seatDTO){
+    public String addSeat(@RequestBody SeatDTO seatDTO){
         String seatId = seatService.addSeat(seatDTO);
         return seatId;
     }

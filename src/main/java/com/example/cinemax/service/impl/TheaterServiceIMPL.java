@@ -22,9 +22,10 @@ public class TheaterServiceIMPL implements TheaterService {
                 addTheaterRequestDTO.getSeat_Id(),
                 addTheaterRequestDTO.getLocation()
         );
-        if (theaterRepo.existsById((int) theater.getTheater_Id())){
+        //(movieRepo.findAllByFilmName(movie.getFilmName()).isEmpty()){
+        if (theaterRepo.findAllByTheaterId(theater.getTheaterId()).isEmpty()){
             theaterRepo.save(theater);
-            return theater.getTheater_Id() + "Saved";
+            return theater.getTheaterId() + "Saved";
         }else {
             System.out.println("Theater already exist");
             return "booking already exist";

@@ -21,7 +21,7 @@ public class Movie {
 
 
     @Id
-    @Column(name = "ticketId",length = 45)
+    @Column(name = "filmId",length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long filmId;
 
@@ -37,7 +37,7 @@ public class Movie {
 
     private String trailerLink;
 
-    private int duration;
+    private String duration;
 
     private Time time;
 
@@ -46,8 +46,8 @@ public class Movie {
     private boolean activeStatus;
 
 
-    public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, int duration, Time time, Date date, boolean activeStatus) {
-//        this.filmId = filmId;
+    public Movie(long filmId, String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, String duration, Time time, Date date, boolean activeStatus) {
+        this.filmId = filmId;
         this.filmName = filmName;
         this.category = category;
         this.filmStatus = filmStatus;
@@ -58,5 +58,19 @@ public class Movie {
         this.time = time;
         this.date = date;
         this.activeStatus = activeStatus;
+    }
+
+
+    public Movie(String filmName, String category, String filmStatus, String description, String posterLink, String trailerLink, String duration, Time time, Date date, boolean b) {
+        this.filmName = filmName;
+        this.category = category;
+        this.filmStatus = filmStatus;
+        this.description = description;
+        this.posterLink = posterLink;
+        this.trailerLink = trailerLink;
+        this.duration = duration;
+        this.time = time;
+        this.date = date;
+        this.activeStatus = b;
     }
 }

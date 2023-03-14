@@ -24,11 +24,11 @@ public class Admin {
 
     String Admin_mail;
 
-    public Admin(int admin_id, String admin_name, String admin_mail) {
-        Admin_id = admin_id;
-        Admin_name = admin_name;
-        Admin_mail = admin_mail;
-    }
+//    public Admin(int admin_id, String admin_name, String admin_mail) {
+//        Admin_id = admin_id;
+//        Admin_name = admin_name;
+//        Admin_mail = admin_mail;
+//    }
 
     public Admin(String admin_name, String admin_mail) {
         this.Admin_name = admin_name;

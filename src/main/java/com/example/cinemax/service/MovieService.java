@@ -8,7 +8,7 @@ import com.example.cinemax.dto.responseDTO.UpMovieBannerResponseDTO;
 import javassist.NotFoundException;
 
 public interface MovieService {
-    String addMovie(AddMovieRequestDTO addMovieRequestDTO);
+    
 
     NowMovieCardResponseDTO getCardInfo(int id) throws NotFoundException;
 
@@ -19,4 +19,6 @@ public interface MovieService {
     UpMovieBannerResponseDTO getUpBannerInfo(int id) throws NotFoundException;
 
     boolean deleteCustomer(int id) throws NotFoundException;
+
+    String addMovie(AddMovieRequestDTO addMovieRequestDTO);
 }

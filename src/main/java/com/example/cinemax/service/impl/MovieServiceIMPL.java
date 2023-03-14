@@ -25,26 +25,6 @@ public class MovieServiceIMPL implements MovieService {
     private ModelMapper modelMapper;
 
 
-    @Override
-    public String addMovie(AddMovieRequestDTO addMovieRequestDTO) {
-        Movie movie = new Movie(
-                addMovieRequestDTO.getFilmName(),
-                addMovieRequestDTO.getCategory(),
-                addMovieRequestDTO.getFilmStatus(),
-                addMovieRequestDTO.getDescription(),
-                addMovieRequestDTO.getPosterLink(),
-                addMovieRequestDTO.getTrailerLink(),
-                addMovieRequestDTO.getDuration(),
-                addMovieRequestDTO.getTime(),
-                addMovieRequestDTO.getDate(),
-                true
-        );
-        if (movieRepo.findByfilmName(movie.getFilmName()).isEmpty()){
-            movieRepo.save(movie);
-            return movie.getFilmName() + "successfully added";
-        }
-        return null;
-    }
 
 
     @Override
@@ -105,5 +85,36 @@ public class MovieServiceIMPL implements MovieService {
             throw new NotFoundException("not found movie");
         }
         return false;
+    }
+
+    @Override
+    public String addMovie(AddMovieRequestDTO addMovieRequestDTO) {
+            Movie movie = new Movie(
+                    addMovieRequestDTO.getFilmName(),
+                    addMovieRequestDTO.getCategory(),
+                    addMovieRequestDTO.getFilmStatus(),
+                    addMovieRequestDTO.getDescription(),
+                    addMovieRequestDTO.getPosterLink(),
+                    addMovieRequestDTO.getTrailerLink(),
+                    addMovieRequestDTO.getDuration(),
+                    addMovieRequestDTO.getTime(),
+                    addMovieRequestDTO.getDate(),
+                    true
+            );
+//        if (bookingRepo.findAllByticketId(booking.getTicketId()).isEmpty()) {
+//            bookingRepo.save(booking);
+//            return booking.getBookingId() + "saved";
+//        }else {
+//            System.out.println("Ticket already exist");
+//            return "Booking already exist";
+//        }
+
+        if (movieRepo.findAllByFilmName(movie.getFilmName()).isEmpty()){
+            movieRepo.save(movie);
+            return movie.getFilmName() + " saved";
+        }else {
+            System.out.println("Movie already exist");
+            return "Movie already exist";
+        }
     }
 }

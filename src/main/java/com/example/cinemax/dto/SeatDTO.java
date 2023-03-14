@@ -14,9 +14,9 @@ public class SeatDTO {
     int theaterId;
 
 
-    public SeatDTO(int seat_no, int theater_id) {
-        seatNo = seat_no;
-        theaterId = theater_id;
+    public SeatDTO(int seatno, int theaterid) {
+        seatNo = seatno;
+        theaterId = theaterid;
     }
 
 

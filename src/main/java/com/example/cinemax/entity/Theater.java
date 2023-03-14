@@ -17,7 +17,7 @@ public class Theater {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long theater_Id;
+    long theaterId;
 
     String theater_name;
 

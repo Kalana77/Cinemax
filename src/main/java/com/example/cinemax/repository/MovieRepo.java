@@ -6,11 +6,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @EnableJpaRepositories
 @Repository
 public interface MovieRepo extends JpaRepository<Movie,Integer> {
 
 
-    List<Movie> findByfilmName(String movieName);
+    List<Movie> findAllByFilmName(String filmName);
 }

@@ -19,7 +19,8 @@ public class MovieController {
     private MovieService movieService;
 
     @PostMapping("/addMovie")
-    public String addMovie(AddMovieRequestDTO addMovieRequestDTO) {
+    public String addMovie(@RequestBody AddMovieRequestDTO addMovieRequestDTO) {
+     //   System.out.println(addMovieRequestDTO.getFilmName());
         String name = movieService.addMovie(addMovieRequestDTO);
         return name;
     }
