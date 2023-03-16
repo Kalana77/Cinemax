@@ -10,9 +10,9 @@ import lombok.*;
 @ToString
 public class AdminDTO {
 
-    int Admin_id;
+    int Adminid;
 
-    String Admin_name;
+    String Adminname;
 
-    String Admin_mail;
+    String Adminmail;
 }

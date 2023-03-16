@@ -7,18 +7,20 @@ import com.example.cinemax.dto.responseDTO.UpComingCardResponseDTO;
 import com.example.cinemax.dto.responseDTO.UpMovieBannerResponseDTO;
 import javassist.NotFoundException;
 
+import java.util.List;
+
 public interface MovieService {
     
 
-    NowMovieCardResponseDTO getCardInfo(int id) throws NotFoundException;
+    NowMovieCardResponseDTO getCardInfo(long id) throws NotFoundException;
 
-    UpComingCardResponseDTO getUpCardInfo(int id) throws NotFoundException;
+    UpComingCardResponseDTO getUpCardInfo(long id) throws NotFoundException;
 
-    NowMovieBannerResponseDTO getNowBannerInfo(int id) throws NotFoundException;
+    NowMovieBannerResponseDTO getNowBannerInfo(long id) throws NotFoundException;
 
-    UpMovieBannerResponseDTO getUpBannerInfo(int id) throws NotFoundException;
+    UpMovieBannerResponseDTO getUpBannerInfo(long id) throws NotFoundException;
 
-    boolean deleteCustomer(int id) throws NotFoundException;
+    boolean deleteCustomer(long id) throws NotFoundException;
 
     String addMovie(AddMovieRequestDTO addMovieRequestDTO);
 }

@@ -18,20 +18,15 @@ public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int Admin_id;
+    int Adminid;
 
-    String Admin_name;
+    String Adminname;
 
-    String Admin_mail;
+    String Adminmail;
 
-//    public Admin(int admin_id, String admin_name, String admin_mail) {
-//        Admin_id = admin_id;
-//        Admin_name = admin_name;
-//        Admin_mail = admin_mail;
-//    }
+    public Admin(String adminname, String adminmail) {
 
-    public Admin(String admin_name, String admin_mail) {
-        this.Admin_name = admin_name;
-        this.Admin_mail = admin_mail;
+        this.Adminname = adminname;
+        this.Adminmail = adminmail;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @EnableJpaRepositories
 @Repository
-public interface MovieRepo extends JpaRepository<Movie,Integer> {
+public interface MovieRepo extends JpaRepository<Movie,Long> {
 
 
     List<Movie> findAllByFilmName(String filmName);

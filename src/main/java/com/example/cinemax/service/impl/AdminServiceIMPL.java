@@ -17,10 +17,11 @@ public class AdminServiceIMPL implements AdminService {
     public String addAdmin(AdminDTO adminDTO) {
 
         Admin admin = new Admin(
-                adminDTO.getAdmin_name(),
-                adminDTO.getAdmin_mail()
+                adminDTO.getAdminname(),
+                adminDTO.getAdminmail()
         );
-        adminRepo.save(admin);
-        return admin.getAdmin_id() + "saved";
+      //  if (bookingRepo.findAllByticketId(booking.getTicketId()).isEmpty())
+            adminRepo.save(admin);
+            return admin.getAdminid() + "saved";
     }
 }

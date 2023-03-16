@@ -29,8 +29,8 @@ public class MovieController {
             path = "get-by-id-now",
             params = "id"
     )
-    public NowMovieCardResponseDTO getCard(@RequestParam(value = "id")int id) throws NotFoundException {
-        NowMovieCardResponseDTO nowMovieCardResponseDTO = movieService.getCardInfo(id);
+    public NowMovieCardResponseDTO getCard(@RequestParam(value = "id")long id) throws NotFoundException {
+        NowMovieCardResponseDTO nowMovieCardResponseDTO =  movieService.getCardInfo(id);
         return nowMovieCardResponseDTO;
     }
 

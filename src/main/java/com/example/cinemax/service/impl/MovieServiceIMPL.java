@@ -2,17 +2,16 @@ package com.example.cinemax.service.impl;
 
 import com.example.cinemax.dto.requestDTO.AddMovieRequestDTO;
 import com.example.cinemax.dto.responseDTO.*;
-import com.example.cinemax.entity.Customer;
 import com.example.cinemax.entity.Movie;
-import com.example.cinemax.entity.Ticket;
 import com.example.cinemax.repository.MovieRepo;
-import com.example.cinemax.repository.TicketRepo;
 import com.example.cinemax.service.MovieService;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -28,9 +27,9 @@ public class MovieServiceIMPL implements MovieService {
 
 
     @Override
-    public NowMovieCardResponseDTO getCardInfo(int id) throws NotFoundException {
+    public NowMovieCardResponseDTO getCardInfo(long id) throws NotFoundException {
         Optional<Movie> movie = movieRepo.findById(id);
-        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus() == "NowShowing") {
+        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus().equalsIgnoreCase("NowShowing") ) {
             NowMovieCardResponseDTO nowMovieCardResponseDTO = modelMapper.map(movie.get(),NowMovieCardResponseDTO.class);
             return nowMovieCardResponseDTO;
         }else {
@@ -40,9 +39,9 @@ public class MovieServiceIMPL implements MovieService {
     }
 
     @Override
-    public UpComingCardResponseDTO getUpCardInfo(int id) throws NotFoundException {
+    public UpComingCardResponseDTO getUpCardInfo(long id) throws NotFoundException {
         Optional<Movie> movie = movieRepo.findById(id);
-        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus() == "UpComing") {
+        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus().equalsIgnoreCase("UpComing") ) {
             UpComingCardResponseDTO upComingCardResponseDTO = modelMapper.map(movie.get(),UpComingCardResponseDTO.class);
             return upComingCardResponseDTO;
         }else {
@@ -53,9 +52,9 @@ public class MovieServiceIMPL implements MovieService {
     }
 
     @Override
-    public NowMovieBannerResponseDTO getNowBannerInfo(int id) throws NotFoundException {
+    public NowMovieBannerResponseDTO getNowBannerInfo(long id) throws NotFoundException {
         Optional<Movie> movie = movieRepo.findById(id);
-        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus() == "NowShowing") {
+        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus().equalsIgnoreCase("NowShowing")) {
             NowMovieBannerResponseDTO nowMovieBannerResponseDTO = modelMapper.map(movie.get(),NowMovieBannerResponseDTO.class);
             return nowMovieBannerResponseDTO;
         }else {
@@ -66,9 +65,9 @@ public class MovieServiceIMPL implements MovieService {
     }
 
     @Override
-    public UpMovieBannerResponseDTO getUpBannerInfo(int id) throws NotFoundException {
+    public UpMovieBannerResponseDTO getUpBannerInfo(long id) throws NotFoundException {
         Optional<Movie> movie = movieRepo.findById(id);
-        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus() == "UpComing") {
+        if (movie.isPresent() && movie.get().isActiveStatus()==true && movie.get().getFilmStatus().equalsIgnoreCase("UpComing")) {
             UpMovieBannerResponseDTO upMovieBannerResponseDTO = modelMapper.map(movie.get(),UpMovieBannerResponseDTO.class);
             return upMovieBannerResponseDTO;
         }else {
@@ -78,7 +77,7 @@ public class MovieServiceIMPL implements MovieService {
     }
 
     @Override
-    public boolean deleteCustomer(int id) throws NotFoundException {
+    public boolean deleteCustomer(long id) throws NotFoundException {
         if (movieRepo.existsById(id)){
             movieRepo.deleteById(id);
         }else {
